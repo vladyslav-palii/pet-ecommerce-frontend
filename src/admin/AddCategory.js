@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Layout from '../core/Layout';
 import {isAuth} from '../auth/index';
 import{Link} from 'react-router-dom';
+import {createCategory} from '../admin/apiAdmin'
 
 const AddCategory = () => {
 
@@ -20,9 +21,9 @@ const handleChange = (e) => {
 
 const onSubmit = (e) => {
   e.preventDefault();
-  // setError('');
-  // setSuccess(false);
-
+  setError('');
+  setSuccess(false);
+  createCategory(user._id, token, {name })
 }
 
 const NewCategoryForm = () => (
